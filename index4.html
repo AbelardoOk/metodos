@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aplicação 4</title>
+    </head>
+    <body>
+        <form onsubmit="return processarFormulario()">
+            <label for="nome">Insira seu nome:</label>
+            <input type="text" name="nome" id="nome" /> <br />
+
+            <label for="idade">Insira sua idade:</label>
+            <input type="text" name="idade" id="idade" /> <br />
+
+            <label for="profissao">Insira sua profissão:</label>
+            <input type="text" name="profissao" id="profissao" /> <br />
+
+            <input type="submit" value="Confirmar!" />
+        </form>
+        <div id="textoCampo"></div>
+
+        <script>
+            function processarFormulario() {
+                var pessoa = {
+                    nome: document.getElementById("nome").value,
+                    idade: document.getElementById("idade").value,
+                    profissao: document.getElementById("profissao").value,
+                };
+
+                var textArea = document.getElementById("textoCampo");
+                var keys = Object.keys(pessoa);
+                var values = Object.values(pessoa);
+
+                textArea.innerHTML =
+                    "<p>Chaves do objeto: " +
+                    keys.join(", ") +
+                    "</p>" +
+                    "<p>Valores do objeto: " +
+                    values.join(", ") +
+                    "</p>";
+
+                return false;
+            }
+        </script>
+    </body>
+</html>

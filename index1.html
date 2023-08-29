@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aplicação 1</title>
+    </head>
+    <body>
+        <form onsubmit="return processarFormulario()">
+            <label for="text">Insira um texto:</label>
+            <input type="text" name="text" id="text" /> <br />
+            <input type="submit" value="Confirmar!" />
+        </form>
+        <div id="textoCampo"></div>
+
+        <script>
+            function processarFormulario() {
+                var texto = document.getElementById("text").value;
+                var minusculo = texto.toLowerCase();
+                var maiusculo = texto.toUpperCase();
+                var textArea = document.getElementById("textoCampo");
+
+                textArea.innerHTML =
+                    "<p>Texto original: " +
+                    texto +
+                    "</p> <p>Texto em maiúscula: " +
+                    maiusculo +
+                    "</p> <p>Texto em minúscula: " +
+                    minusculo +
+                    "</p>";
+
+                return false;
+            }
+        </script>
+    </body>
+</html>

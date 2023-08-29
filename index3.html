@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aplicação 3</title>
+    </head>
+    <body>
+        <button onclick="processarData()">Descubra a data atual</button>
+        <div id="textoCampo"></div>
+
+        <script>
+            function processarData() {
+                var dataAtual = new Date();
+                var dia = dataAtual.getDate();
+                var mes = dataAtual.getMonth() + 1;
+                var ano = dataAtual.getFullYear();
+                var textArea = document.getElementById("textoCampo");
+
+                textArea.innerHTML =
+                    "<p>Data atual: " + dia + "/" + mes + "/" + ano + "</p>";
+
+                return false;
+            }
+        </script>
+    </body>
+</html>

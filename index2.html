@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aplicação 2</title>
+    </head>
+    <body>
+        <form onsubmit="return processarFormulario()">
+            <label for="text">Insira um número:</label>
+            <input type="number" name="text" id="text" /> <br />
+            <input type="submit" value="Confirmar!" />
+        </form>
+        <div id="textoCampo"></div>
+
+        <script>
+            function processarFormulario() {
+                var texto = document.getElementById("text").value;
+                var textArea = document.getElementById("textoCampo");
+
+                var numeros = [];
+                for (var i = 0; i < texto; i++) {
+                    numeros.push(Math.floor(Math.random() * 10));
+                }
+
+                textArea.innerHTML =
+                    "<p> Números aleatórios gerados: " +
+                    numeros.join(", ") +
+                    "</p>";
+
+                return false;
+            }
+        </script>
+    </body>
+</html>
